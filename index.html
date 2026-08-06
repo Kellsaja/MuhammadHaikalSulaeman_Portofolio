@@ -252,46 +252,67 @@
             display: block;
         }
 
-        /* 4. Keahlian (Tech Stack) */
+        /* 4. Keahlian (Layout 2 Kolom) */
         #keahlian {
             background: #fff;
         }
 
-        .skills-grid {
+        .skills-2-col {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
         }
 
-        .skill-box {
+        .skill-card {
             background: var(--secondary-color);
-            padding: 25px;
+            padding: 35px;
             border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
             border-top: 5px solid var(--primary-color);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
         }
 
-        .skill-box h3 {
-            font-size: 1.2rem;
-            margin-bottom: 15px;
+        .skill-card h3 {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            margin-bottom: 25px;
             text-align: center;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 15px;
         }
 
-        .skill-box ul {
-            list-style-type: none;
+        .skill-list {
+            list-style: none;
             padding: 0;
+            margin: 0;
         }
 
-        .skill-box li {
-            padding: 10px 0;
-            border-bottom: 1px solid #e1e4e8;
-            text-align: center;
+        .skill-list li {
+            position: relative;
+            padding-left: 35px;
+            margin-bottom: 18px;
+            font-size: 1.05rem;
             color: #444;
-            font-weight: 500;
+            line-height: 1.5;
         }
-        
-        .skill-box li:last-child {
-             border-bottom: none;
+
+        /* Icon Centang Kustom */
+        .skill-list li::before {
+            content: '✔';
+            position: absolute;
+            left: 0;
+            top: 2px;
+            color: #fff;
+            background-color: var(--accent-color);
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: bold;
         }
 
         /* 5. Proyek (Showcase) */
@@ -504,39 +525,38 @@
         </div>
     </section>
 
-    <!-- Keahlian -->
+<!-- Keahlian -->
     <section id="keahlian">
         <div class="container">
-            <h2>Keahlian Teknis</h2>
-            <div class="skills-grid">
+            <h2>Keahlian</h2>
+            <div class="skills-2-col">
                 
-                <div class="skill-box">
-                    <h3>Architecture & Process Modeling</h3>
-                    <ul>
-                        <li>Archi (ArchiMate)</li>
-                        <li>Bizagi Modeler</li>
-                        <li>Visual Paradigm</li>
-                        <li>Draw.io</li>
+                <!-- Kolom Kiri: Hard Skills -->
+                <div class="skill-card">
+                    <h3>Hard Skills</h3>
+                    <ul class="skill-list">
+                        <li><strong>Enterprise Architecture:</strong> TOGAF, ArchiMate (Archi)</li>
+                        <li><strong>Business Process:</strong> Bizagi Modeler, Visual Paradigm, Draw.io</li>
+                        <li><strong>ERP System:</strong> Odoo Configuration & Implementation</li>
+                        <li><strong>Database Management:</strong> MySQL, XAMPP Server</li>
+                        <li><strong>Programming & Dev:</strong> Java (OOP), PHP, CodeIgniter 3</li>
+                        <li><strong>Development Tools:</strong> Visual Studio Code, IntelliJ IDEA</li>
+                        <li><strong>Networking & IoT:</strong> Cisco Packet Tracer</li>
+                        <li><strong>Office & Admin:</strong> Google Workspace, Microsoft Office Suite</li>
                     </ul>
                 </div>
                 
-                <div class="skill-box">
-                    <h3>Enterprise Systems & Business</h3>
-                    <ul>
-                        <li>Odoo (ERP Implementation)</li>
-                        <li>Microsoft Office Suite</li>
-                        <li>Google Workspace</li>
-                        <li>Manajemen Proyek</li>
-                    </ul>
-                </div>
-
-                <div class="skill-box">
-                    <h3>Fundamental Tech & Development</h3>
-                    <ul>
-                        <li>MySQL (Relational Database)</li>
-                        <li>Visual Studio Code</li>
-                        <li>IntelliJ IDEA</li>
-                        <li>Konsep Dasar OOP</li>
+                <!-- Kolom Kanan: Soft Skills -->
+                <div class="skill-card">
+                    <h3>Soft Skills</h3>
+                    <ul class="skill-list">
+                        <li>Berpikir kritis, analitis, dan sistematis.</li>
+                        <li>Pemecahan masalah (Problem Solving) dengan fokus pada efisiensi operasional bisnis.</li>
+                        <li>Pemahaman mendalam mengenai manajemen proyek dan alur kerja tim (Team Leadership).</li>
+                        <li>Berkolaborasi dan komunikasi efektif dalam lingkungan kerja dinamis.</li>
+                        <li>Pengetahuan fundamental mengenai Supply Chain Management (SCM) dan analisis model bisnis (UMKM).</li>
+                        <li>Beradaptasi dengan cepat terhadap perubahan dan memiliki dorongan kuat untuk terus belajar.</li>
+                        <li>Bekerja di bawah tekanan dan memenuhi tenggat waktu yang ketat.</li>
                     </ul>
                 </div>
 
