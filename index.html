@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portofolio | Muhammad Haikal Sulaeman</title>
     <style>
+        /* Efek gulir mulus (smooth scrolling) untuk seluruh halaman */
+        html {
+            scroll-behavior: smooth;
+        }
+
         /* Desain dasar yang bersih, modern, dan profesional */
         :root {
             --primary-color: #2F4F4F; /* Dark Slate Gray (Hijau Gelap) */
@@ -20,6 +25,11 @@
             margin: 0;
             padding: 0;
             background-color: #FFFFFF;
+        }
+
+        /* Mengatur agar saat di-scroll, judul section tidak tertutup oleh header (navbar) yang melayang */
+        section {
+            scroll-margin-top: 80px; 
         }
 
         /* Container untuk menjaga lebar konten */
@@ -76,7 +86,7 @@
             background: var(--primary-color);
             color: #fff;
             padding: 12px 25px;
-            border-radius: 30px; /* Membuat tombol membulat elegan */
+            border-radius: 30px;
             margin-top: 10px;
             font-weight: 600;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
@@ -174,46 +184,65 @@
         .hero-image img {
             width: 320px;
             height: 320px;
-            border-radius: 50%; /* Membuat foto jadi lingkaran */
+            border-radius: 50%;
             object-fit: cover;
             border: 8px solid var(--secondary-color);
             box-shadow: 0 10px 25px rgba(0,0,0,0.1);
         }
 
-        /* 3. Tentang Saya */
-        #tentang {
+        /* 3. Pendidikan Saya (Diperbarui sesuai desain gambar) */
+        #pendidikan {
             background: var(--secondary-color);
-            text-align: center;
         }
 
-        .about-text {
-            max-width: 800px;
-            margin: 0 auto 3rem auto;
-            font-size: 1.1rem;
-            line-height: 1.8;
-        }
-
-        .about-grid {
+        .edu-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            max-width: 900px;
+            margin: 0 auto;
         }
 
-        .about-card {
+        .edu-card {
             background: #fff;
-            padding: 30px 20px;
             border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
             transition: transform 0.3s ease;
+            text-align: center;
+            padding-bottom: 30px;
         }
 
-        .about-card:hover {
+        .edu-card:hover {
             transform: translateY(-5px);
         }
 
-        .about-card h4 {
-            color: var(--accent-color);
+        .edu-image-top {
+            width: 100%;
+            height: 200px;
+            background-color: #eaeaea;
+            margin-bottom: 25px;
+            overflow: hidden;
+        }
+
+        .edu-image-top img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .edu-card h3 {
             font-size: 1.2rem;
+            color: var(--text-color);
+            margin: 0 20px 15px 20px;
+            font-weight: 500;
+            line-height: 1.4;
+        }
+
+        .edu-years {
+            color: #666;
+            font-size: 0.95rem;
+            display: block;
         }
 
         /* 4. Keahlian (Tech Stack) */
@@ -387,7 +416,7 @@
                 padding-right: 0;
                 margin-top: 2rem;
             }
-            .about-grid, .skills-grid {
+            .edu-grid, .skills-grid {
                 grid-template-columns: 1fr;
             }
             header .container {
@@ -410,11 +439,11 @@
     <!-- Navigasi -->
     <header>
         <div class="container">
-            <h3>M. Haikal S.</h3>
+            <h3>Muhammad. Haikal. Sulaeman.</h3>
             <nav>
                 <ul>
                     <li><a href="#hero">Beranda</a></li>
-                    <li><a href="#tentang">Tentang</a></li>
+                    <li><a href="#pendidikan">Pendidikan</a></li>
                     <li><a href="#keahlian">Keahlian</a></li>
                     <li><a href="#proyek">Proyek</a></li>
                     <li><a href="#kontak">Kontak</a></li>
@@ -427,7 +456,7 @@
     <section id="hero">
         <div class="container" style="display: flex; align-items: center;">
             <div class="hero-content">
-                <p style="margin-bottom: 0; color: var(--accent-color); font-weight: bold; letter-spacing: 1px;">Halo, gw</p>
+                <p style="margin-bottom: 0; color: var(--accent-color); font-weight: bold; letter-spacing: 1px;">Halo, Saya</p>
                 <h1>Muhammad Haikal Sulaeman</h1>
                 <h3>Mahasiswa Sarjana Sistem Informasi | Antusias pada Data Analyst, IT Quality Assurance, & Enterprise System</h3>
                 <p>Mahasiswa semester 5, S1 Sistem Informasi UPN "Veteran" Jakarta (IPK 3.89) yang berfokus pada integrasi teknologi dan proses bisnis. Memiliki pemahaman dasar dalam Basis Data, Arsitektur Enterprise, SCM, dan ERP, didukung oleh penggunaan tools seperti Odoo dan MySQL. Terbiasa memecahkan masalah melalui analisis yang terstruktur. Saat ini terbuka untuk peluang karir sebagai Data Analyst, IT Quality Assurance, atau di bidang Enterprise System.</p>
@@ -442,24 +471,27 @@
         </div>
     </section>
 
-    <!-- Tentang Saya -->
-    <section id="tentang">
+    <!-- Pendidikan Saya -->
+    <section id="pendidikan">
         <div class="container">
-            <h2>Tentang Saya</h2>
-            <p class="about-text">Merupakan mahasiswa semester 5 program studi Sarjana Sistem Informasi di Universitas Pembangunan Nasional "Veteran" Jakarta dengan IPK 3.88. Memiliki minat mendalam pada integrasi teknologi dengan proses bisnis, berbekal landasan keilmuan yang kuat pada bidang Arsitektur Enterprise, Supply Chain Management (SCM), dan Sistem ERP.</p>
-            
-            <div class="about-grid">
-                <div class="about-card">
-                    <h4>Berpikir Analitis</h4>
-                    <p>Mampu memecah struktur proses bisnis yang kompleks menjadi permodelan arsitektur yang terukur dan terarah.</p>
+            <h2>Pendidikan Saya</h2>
+            <div class="edu-grid">
+                <!-- Data UPN -->
+                <div class="edu-card">
+                    <div class="edu-image-top">
+                        <img src="upnvj.jpg" alt="UPNVJ">
+                    </div>
+                    <h3>S1 Sistem Informasi Universitas Pembangunan Nasional "Veteran" Jakarta</h3>
+                    <span class="edu-years">Agustus 2024 - Sekarang</span>
                 </div>
-                <div class="about-card">
-                    <h4>Problem Solving</h4>
-                    <p>Fokus pada pencarian solusi efisien berbasis teknologi untuk mengoptimalkan operasional sistem perusahaan.</p>
-                </div>
-                <div class="about-card">
-                    <h4>Kepemimpinan Tim</h4>
-                    <p>Berpengalaman mengoordinasikan tim lintas tugas dalam berbagai proyek dan riset kolaboratif secara profesional.</p>
+                
+                <!-- Data SMA -->
+                <div class="edu-card">
+                    <div class="edu-image-top">
+                        <img src="sma.jpg" alt="SMA Cenderawasih 1 Jakarta">
+                    </div>
+                    <h3>Sekolah Menengah Atas (SMA) Cenderawasih 1 Jakarta</h3>
+                    <span class="edu-years">Juli 2021 - Mei 2024</span>
                 </div>
             </div>
         </div>
