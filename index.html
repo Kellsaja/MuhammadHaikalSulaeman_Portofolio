@@ -32,10 +32,10 @@
             scroll-margin-top: 80px; 
         }
 
-        /* Container untuk menjaga lebar konten */
+        /* Container untuk menjaga lebar konten - DIBUAT LEBIH LEBAR */
         .container {
             width: 90%;
-            max-width: 1100px;
+            max-width: 1250px; /* Awalnya 1100px, dibesarin biar gak terlalu kosong kiri kanan */
             margin: auto;
             overflow: hidden;
             padding: 4rem 0;
@@ -155,21 +155,27 @@
 
         .hero-content {
             flex: 1;
-            padding-right: 3rem;
+            padding-right: 4rem; /* Ditambah biar jarak teks ke foto lebih lega */
         }
 
+        /* UKURAN TEKS HERO DIBESARKAN */
         .hero-content h1 {
-            font-size: 3.2rem;
+            font-size: 3.8rem; /* Awalnya 3.2rem */
             line-height: 1.2;
             margin-bottom: 15px;
             color: var(--primary-color);
         }
 
         .hero-content h3 {
-            font-size: 1.2rem;
+            font-size: 1.4rem; /* Awalnya 1.2rem */
             color: #666;
             font-weight: 500;
             margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            font-size: 1.05rem;
+            line-height: 1.7;
         }
         
         .hero-actions {
@@ -181,16 +187,17 @@
             text-align: center;
         }
 
+        /* FOTO DIPERBESAR DAN BORDER DIHAPUS */
         .hero-image img {
-            width: 320px;
-            height: 320px;
+            width: 380px; /* Awalnya 320px */
+            height: 380px; /* Awalnya 320px */
             border-radius: 50%;
             object-fit: cover;
-            border: 8px solid var(--secondary-color);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border: none; /* Border tebal dihapus */
+            box-shadow: 0 12px 30px rgba(0,0,0,0.15); /* Shadow diperhalus dan dipertajam */
         }
 
-        /* 3. Pendidikan Saya (Diperbarui sesuai desain gambar) */
+        /* 3. Pendidikan Saya */
         #pendidikan {
             background: var(--secondary-color);
         }
@@ -439,7 +446,7 @@
     <!-- Navigasi -->
     <header>
         <div class="container">
-            <h3>Muhammad. Haikal. Sulaeman.</h3>
+            <h3>M. Haikal S.</h3>
             <nav>
                 <ul>
                     <li><a href="#hero">Beranda</a></li>
@@ -482,7 +489,7 @@
                         <img src="upnvj.png" alt="UPNVJ">
                     </div>
                     <h3>S1 Sistem Informasi Universitas Pembangunan Nasional "Veteran" Jakarta</h3>
-                    <span class="edu-years">Agustus 2024 - Sekarang</span>
+                    <span class="edu-years">Agu 2024 - Sekarang</span>
                 </div>
                 
                 <!-- Data SMA -->
@@ -491,7 +498,7 @@
                         <img src="sma.png" alt="SMA Cenderawasih 1 Jakarta">
                     </div>
                     <h3>Sekolah Menengah Atas (SMA) Cenderawasih 1 Jakarta</h3>
-                    <span class="edu-years">Juli 2021 - Mei 2024</span>
+                    <span class="edu-years">Jul 2021 - Mei 2024</span>
                 </div>
             </div>
         </div>
