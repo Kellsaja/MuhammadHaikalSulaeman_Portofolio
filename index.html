@@ -297,22 +297,16 @@
             line-height: 1.5;
         }
 
-        /* Icon Centang Kustom */
+       /* Icon Titik Kustom */
         .skill-list li::before {
-            content: '✔';
+            content: ''; /* Simbol ceklis dihapus jadi kosong */
             position: absolute;
             left: 0;
-            top: 2px;
-            color: #fff;
+            top: 7px; /* Posisi diturunin dikit biar sejajar sama teks */
             background-color: var(--accent-color);
-            width: 22px;
-            height: 22px;
+            width: 12px; /* Dikecilin biar proporsional jadi titik */
+            height: 12px;
             border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.8rem;
-            font-weight: bold;
         }
 
         /* 5. Proyek (Showcase) */
@@ -533,28 +527,30 @@
                 
                 <!-- Kolom Kiri: Hard Skills -->
                 <div class="skill-card">
-                    <h3>Hard Skills</h3>
+                    <h3>Keahlian Teknis</h3>
                     <ul class="skill-list">
-                        <li><strong>Enterprise Architecture:</strong> TOGAF, ArchiMate (Archi)</li>
-                        <li><strong>Business Process:</strong> Bizagi Modeler, Visual Paradigm, Draw.io</li>
-                        <li><strong>ERP System:</strong> Odoo Configuration & Implementation</li>
-                        <li><strong>Database Management:</strong> MySQL, XAMPP Server</li>
-                        <li><strong>Programming & Dev:</strong> Java (OOP), PHP, CodeIgniter 3</li>
-                        <li><strong>Development Tools:</strong> Visual Studio Code, IntelliJ IDEA</li>
-                        <li><strong>Networking & IoT:</strong> Cisco Packet Tracer</li>
-                        <li><strong>Office & Admin:</strong> Google Workspace, Microsoft Office Suite</li>
+                        <li><strong>Microsoft Office:</strong> Ms. Word, Ms. Excel, dan Ms. Power Point</li>
+                        <li><strong>Google Workspace:</strong> Google Docs dan Google Sheets</li>
+                        <li><strong>Design:</strong> Canva</li>
+                        <li><strong>Diagram:</strong> Draw.io, Archi, Bizagi Modeler, dan VisualParadigm</li>
+                        <li><strong>Capcut</strong></li>
+                        <li><strong>Odoo</strong></li>
+                        <li><strong>MySQL</strong></li>
+                        <li><strong>IntelliJ IDEA</strong></li>
+                        <li><strong>Visual Studio Code</strong></li>
+                        <li><strong>Bahasa Indonesia (Fasih)</strong></li>
+                        <li><strong>Bahasa Inggris (Dasar)</strong></li>
                     </ul>
                 </div>
                 
                 <!-- Kolom Kanan: Soft Skills -->
                 <div class="skill-card">
-                    <h3>Soft Skills</h3>
+                    <h3>Keahlian Non-Teknis</h3>
                     <ul class="skill-list">
                         <li>Berpikir kritis, analitis, dan sistematis.</li>
-                        <li>Pemecahan masalah (Problem Solving) dengan fokus pada efisiensi operasional bisnis.</li>
+                        <li>Pemecahan masalah (Problem Solving) dengan fokus pada efisiensi operasional.</li>
                         <li>Pemahaman mendalam mengenai manajemen proyek dan alur kerja tim (Team Leadership).</li>
                         <li>Berkolaborasi dan komunikasi efektif dalam lingkungan kerja dinamis.</li>
-                        <li>Pengetahuan fundamental mengenai Supply Chain Management (SCM) dan analisis model bisnis (UMKM).</li>
                         <li>Beradaptasi dengan cepat terhadap perubahan dan memiliki dorongan kuat untuk terus belajar.</li>
                         <li>Bekerja di bawah tekanan dan memenuhi tenggat waktu yang ketat.</li>
                     </ul>
