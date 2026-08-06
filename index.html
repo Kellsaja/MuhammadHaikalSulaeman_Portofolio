@@ -423,8 +423,9 @@
         }
         
         .cert-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Ini otomatis bikin jadi 3 kolom pas di layar laptop */
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center; /* Ini kunci utama biar sisa 2 sertif di bawah otomatis ke tengah */
             gap: 30px;
             max-width: 1250px;
             margin: auto;
@@ -439,6 +440,8 @@
             border-top: 5px solid var(--accent-color);
             display: flex;
             flex-direction: column;
+            width: calc(33.333% - 20px); /* Rumus jitu memaksa pas 3 kotak per baris */
+            min-width: 320px; /* Menjaga ukuran ga rusak kalau dibuka di HP */
         }
 
         .cert-card:hover {
@@ -774,7 +777,7 @@
                     </div>
                 </div>
 
-                 <!-- Proyek 5 -->
+                 <!-- Proyek 6 -->
                 <div class="project-card">
                     <div class="project-image">
                         <!-- Ganti erd-restoran.jpg dengan gambar ERD atau kueri MySQL -->
@@ -803,7 +806,7 @@
         </div>
     </section>
     
-    <!-- Sertifikasi -->
+   <!-- Sertifikasi -->
     <section id="sertifikasi">
         <div class="container">
             <h2>Pelatihan & Sertifikasi</h2>
@@ -812,7 +815,6 @@
                 <!-- Sertifikat 1 -->
                 <div class="cert-card">
                     <div class="cert-image">
-                        <!-- Ganti nama file fotonya sesuai yang ada di laptop -->
                         <img src="UIUX in Action - LinkAja.png" alt="Sertifikat Lomba UI/UX in Action - LinkAja">
                     </div>
                     <div class="cert-content">
@@ -824,7 +826,6 @@
                 <!-- Sertifikat 2 -->
                 <div class="cert-card">
                     <div class="cert-image">
-                        <!-- Ganti nama file fotonya sesuai yang ada di laptop -->
                         <img src="networkingbasic_cisco.png" alt="Sertifkat Networking Basics - Cisco Networking Academy">
                     </div>
                     <div class="cert-content">
@@ -836,7 +837,66 @@
                 <!-- Sertifikat 3 -->
                 <div class="cert-card">
                     <div class="cert-image">
-                        <!-- Ganti nama file fotonya sesuai yang ada di laptop -->
+                        <!-- Ganti gambarnya sesuai file -->
+                        <img src="iotcisco.png" alt="Sertifikat Cisco IoT">
+                    </div>
+                    <div class="cert-content">
+                        <h3>Exploring Internet of Things with Cisco Packet Tracer - Cisco Networking Academy</h3>
+                        <p>Sertifikasi Penyelesaian: <i>Simulasi Pengintegrasian Internet of Things (IoT) & Manajemen Topologi Jaringan Virtual menggunakan Cisco Packet Tracer (Oktober 2025).</i>.</p>
+                    </div>
+                </div>
+
+                <!-- Sertifikat 4 -->
+                <div class="cert-card">
+                    <div class="cert-image">
+                        <!-- Ganti gambarnya sesuai file -->
+                        <img src="NetworkingCisco.png" alt="Sertifikat Exploring Networking with Cisco Packet Tracer">
+                    </div>
+                    <div class="cert-content">
+                        <h3>Exploring Networking with Cisco Packet Tracer - Cisco Networking Academy</h3>
+                        <p>Sertifikasi Penyelesaian: <i>Perancangan, Konfigurasi, dan Pemantauan Infrastruktur Jaringan Virtual menggunakan Cisco Packet Tracer (Oktober 2025).</i></p>
+                    </div>
+                </div>
+
+                <!-- Sertifikat 5 -->
+                <div class="cert-card">
+                    <div class="cert-image">
+                        <!-- Ganti gambarnya sesuai file -->
+                        <img src="gettingstartedcisco.png" alt="Sertifikat Getting Started with Cisco Packet Tracer">
+                    </div>
+                    <div class="cert-content">
+                        <h3>Getting Started with Cisco Packet Tracer - Cisco Networking Academy</h3>
+                        <p>Sertifikasi Penyelesaian: <i>Dasar Pengoperasian Cisco Packet Tracer untuk Perancangan dan Simulasi Arsitektur Infrastruktur Jaringan (Oktober 2025).</i></p>
+                    </div>
+                </div>
+
+                <!-- Sertifikat 6 -->
+                <div class="cert-card">
+                    <div class="cert-image">
+                        <!-- Ganti gambarnya sesuai file -->
+                        <img src="umlbisaai.png" alt="Sertifikat UML: Analisa Perancangan Sistem Berorientasi Objek Part 1 - BISA.AI ">
+                    </div>
+                    <div class="cert-content">
+                        <h3>UML: Analisa Perancangan Sistem Berorientasi Objek Part 1 - BISA.AI </h3>
+                        <p>Sertifikasi Penyelesaian: <i>Analisis Kebutuhan, Pemodelan Visual UML, dan Perancangan Sistem Berorientasi Objek (OOP) untuk Enterprise Architecture (Mei 2025).</i></p>
+                    </div>
+                </div>
+
+                <!-- Sertifikat 7 -->
+                <div class="cert-card">
+                    <div class="cert-image">
+                        <!-- Ganti gambarnya sesuai file -->
+                        <img src="codeigniter3.png" alt="Sertifikat Dasar CodeIgniter 3 - BISA.AI ">
+                    </div>
+                    <div class="cert-content">
+                        <h3>Dasar CodeIgniter 3 - BISA.AI </h3>
+                        <p>Sertifikasi Penyelesaian: <i>Pengembangan Aplikasi Web menggunakan PHP CodeIgniter 3, Implementasi MVC, Integrasi Basis Data, dan Keamanan Web (Mei 2025).</i></p>
+                    </div>
+                </div>
+
+                <!-- Sertifikat 8 -->
+                <div class="cert-card">
+                    <div class="cert-image">
                         <img src="sertif eset.jpeg" alt="Sertifikat ESET Campus Security Day">
                     </div>
                     <div class="cert-content">
