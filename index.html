@@ -278,7 +278,7 @@
             transform: translateY(-8px);
             box-shadow: 0 12px 25px rgba(0,0,0,0.1);
         }
-        
+
         .skill-card h3 {
             font-size: 1.4rem;
             color: var(--primary-color);
@@ -381,6 +381,38 @@
         .project-content p {
             flex-grow: 1;
             font-size: 0.95rem;
+        }
+
+        /* Biar screenshot odoo ngepas di kotaknya */
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Desain tombol Laporan & YT */
+        .project-links {
+            margin-top: 15px;
+            display: flex;
+            gap: 10px;
+        }
+        
+        .btn-sm {
+            background: var(--primary-color);
+            color: #fff;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-align: center;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .btn-sm:hover {
+            background: var(--accent-color);
+            transform: translateY(-2px);
+            color: #fff;
         }
 
         /* 6. Sertifikasi */
@@ -574,6 +606,31 @@
 
                 <!-- Proyek 1 -->
                 <div class="project-card">
+                    <div class="project-image">
+                        <!-- Ganti odoo.jpg dengan nama file screenshot aslinya -->
+                        <img src="odoo.png" alt="Screenshot Odoo 17">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Penerapan ERP PT Cipta Olahan Roti</h3>
+                        <div class="project-meta">
+                            <strong>Peran:</strong> Koordinator Implementasi<br>
+                            <strong>Fokus:</strong> ERP Odoo, Proses Bisnis
+                        </div>
+                        <p>Implementasi sistem operasi manajemen menggunakan Odoo 17, mengatur multi-user database, dan menyusun Business Model Canvas.</p>
+                        
+                        <!-- Tombol Laporan dan YouTube -->
+                        <div class="project-links">
+                            <!-- Ganti laporan.pdf dengan nama file pdf lu -->
+                            <a href="laporan_erp.pdf" target="_blank" class="btn-sm">📄 Laporan</a>
+                            
+                            <!-- Ganti LINK_YOUTUBE_DISINI dengan link asli video YT lu -->
+                            <a href="https://youtu.be/tg2yEsVBBVQ?si=H9H859iqS4iQ2HTp" target="_blank" class="btn-sm">🎥 Video YT</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyek 2 -->
+                <div class="project-card">
                     <div class="project-image">[ Arsitektur ArchiMate ]</div>
                     <div class="project-content">
                         <h3 class="project-title">SIPADU Klinik Sehat Mandiri</h3>
@@ -582,19 +639,6 @@
                             <strong>Fokus:</strong> Enterprise Architecture (Archi)
                         </div>
                         <p>Analisis dan perancangan Business Architecture dan Information System Architecture untuk transformasi digital layanan kesehatan terpadu.</p>
-                    </div>
-                </div>
-
-                <!-- Proyek 2 -->
-                <div class="project-card">
-                    <div class="project-image">[ Antarmuka Odoo 17 ]</div>
-                    <div class="project-content">
-                        <h3 class="project-title">Penerapan ERP PT Cipta Olahan Roti</h3>
-                        <div class="project-meta">
-                            <strong>Peran:</strong> Koordinator Implementasi<br>
-                            <strong>Fokus:</strong> ERP Odoo, Proses Bisnis
-                        </div>
-                        <p>Implementasi sistem operasi manajemen menggunakan Odoo 17, mengatur multi-user database, dan menyusun Business Model Canvas.</p>
                     </div>
                 </div>
 
