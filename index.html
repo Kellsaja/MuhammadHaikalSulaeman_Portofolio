@@ -224,14 +224,53 @@
 
         /* Responsif untuk Mobile */
         @media (max-width: 768px) {
-            #hero { flex-direction: column-reverse; text-align: center; padding: 4rem 0; }
-            .hero-content { padding-right: 0; margin-top: 2rem; }
-            .edu-grid, .skills-2-col, .projects-grid { grid-template-columns: 1fr; }
-            header .container { flex-direction: column; }
-            nav ul { margin-top: 15px; flex-wrap: wrap; justify-content: center; gap: 15px; }
-            nav li { margin-left: 0; }
-            .cert-card { width: 100%; }
+            /* Memaksa layout hero jadi atas-bawah (nimpa kode bawaan HTML) */
+            #hero .container { 
+                flex-direction: column-reverse !important; 
+                text-align: center; 
+            }
+            .hero-content { 
+                padding-right: 0; 
+                margin-top: 2rem; 
+            }
+            /* Ngecilin foto profil dan judul di HP biar ga kegedean */
+            .hero-image img {
+                width: 240px; 
+                height: 240px;
+            }
+            .hero-content h1 {
+                font-size: 2.3rem;
+            }
+            /* Bikin semua kartu (Pendidikan, Keahlian, Proyek) jadi 1 baris ke bawah */
+            .edu-grid, .skills-2-col, .projects-grid { 
+                grid-template-columns: 1fr; 
+            }
+            /* Nyesuain tinggi gambar pendidikan biar pas di layar HP */
+            .edu-image-top {
+                height: 220px;
+            }
+            /* Ngerapihin menu navigasi biar muat dan sejajar */
+            header .container { 
+                flex-direction: column; 
+            }
+            nav ul { 
+                margin-top: 15px; 
+                flex-wrap: wrap; 
+                justify-content: center; 
+                gap: 12px; 
+            }
+            nav li { 
+                margin-left: 0; 
+            }
+            nav a {
+                font-size: 0.85rem; 
+            }
+            /* Kartu sertifikat otomatis melebar penuh di HP */
+            .cert-card { 
+                width: 100%; 
+            }
         }
+        
     </style>
 </head>
 <body>
@@ -656,6 +695,6 @@
             });
         });
     </script>
-    
+
 </body>
 </html>
