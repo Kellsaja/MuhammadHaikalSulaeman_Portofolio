@@ -97,6 +97,11 @@
         nav li { margin-left: 25px; }
         nav a { color: var(--text-color); font-weight: 600; font-size: 0.95rem; }
         nav a:hover { color: var(--primary-color); }
+        nav a.active {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color); /* Tambahan garis bawah tipis biar makin elegan */
+            padding-bottom: 3px;
+        }
 
         /* 2. Hero Section */
         #hero { padding: 6rem 0; display: flex; align-items: center; justify-content: space-between; }
@@ -627,5 +632,30 @@
         </div>
     </footer>
 
+    <!-- Script untuk Efek Menu Aktif (Scrollspy) -->
+    <script>
+        const sections = document.querySelectorAll('section, footer');
+        const navLinks = document.querySelectorAll('nav ul li a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                // Angka 150 adalah toleransi jarak header yang melayang
+                if (pageYOffset >= (sectionTop - 150)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+    
 </body>
 </html>
