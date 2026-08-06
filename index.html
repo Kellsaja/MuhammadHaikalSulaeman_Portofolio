@@ -84,6 +84,20 @@
         }
 
         /* 1. Header & Navigasi */
+        /* Tombol Hamburger (Sembunyi di mode Laptop) */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+        .menu-toggle .bar {
+            width: 25px; height: 3px;
+            background-color: #ffffff;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+
         header {
             background: rgba(5, 5, 5, 0.95); /* Hitam transparan */
             border-bottom: 1px solid #222; /* Garis pembatas tipis elegan */
@@ -249,28 +263,42 @@
             .edu-image-top {
                 height: 220px;
             }
-            /* Ngerapihin menu navigasi biar muat dan sejajar */
+            /* Rombak Header & Navigasi jadi Menu Hamburger Dropdown */
             header .container { 
-                flex-direction: column; 
+                flex-direction: row !important; /* Nama dan tombol dipaksa sejajar kiri-kanan */
+                position: relative; /* Biar dropdown nempel di bawah header */
             }
+            header h3 { font-size: 1.1rem; } /* Teks dikecilin dikit biar muat */
+            
+            .menu-toggle { display: flex; } /* Munculin garis 3 di HP */
+            
+            nav#nav-menu { 
+                display: none; /* Sembunyiin menu aslinya */
+                position: absolute;
+                top: 100%; left: 0; width: 100%;
+                background: rgba(5, 5, 5, 0.98);
+                border-bottom: 1px solid #222;
+                box-shadow: 0 10px 15px rgba(0,0,0,0.5);
+            }
+            nav#nav-menu.active { display: block; } /* Munculin menu dropdown saat tombol diklik */
+            
             nav ul { 
-                margin-top: 15px; 
-                flex-wrap: wrap; 
-                justify-content: center; 
-                gap: 12px; 
+                flex-direction: column; 
+                margin: 0; padding: 10px 0; 
+                gap: 0;
             }
-            nav li { 
-                margin-left: 0; 
-            }
-            nav a {
-                font-size: 0.85rem; 
+            nav li { margin: 0; text-align: center; }
+            nav a { 
+                display: block; 
+                padding: 15px 20px; 
+                font-size: 1.05rem; 
             }
             /* Kartu sertifikat otomatis melebar penuh di HP */
             .cert-card { 
                 width: 100%; 
             }
         }
-        
+
     </style>
 </head>
 <body>
@@ -279,7 +307,15 @@
     <header>
         <div class="container">
             <h3>Muhammad. Haikal. Sulaeman.</h3>
-            <nav>
+            
+            <!-- Tombol Hamburger (Garis 3) -->
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+
+            <nav id="nav-menu">
                 <ul>
                     <li><a href="#hero">Beranda</a></li>
                     <li><a href="#pendidikan">Pendidikan</a></li>
@@ -696,5 +732,23 @@
         });
     </script>
 
+<!-- Script untuk Menu Hamburger -->
+    <script>
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navMenu = document.getElementById('nav-menu');
+
+        // Buka/Tutup menu kalau garis 3 diklik
+        mobileMenu.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Otomatis tutup menu kalau salah satu link diklik
+        document.querySelectorAll('nav ul li a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+    </script>
+    
 </body>
 </html>
