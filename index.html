@@ -263,35 +263,53 @@
             .edu-image-top {
                 height: 220px;
             }
-            /* Rombak Header & Navigasi jadi Menu Hamburger Dropdown */
+            /* Perbaikan total menu dropdown hamburger di HP */
             header .container { 
-                flex-direction: row !important; /* Nama dan tombol dipaksa sejajar kiri-kanan */
-                position: relative; /* Biar dropdown nempel di bawah header */
+                flex-direction: row !important; 
+                position: relative; 
             }
-            header h3 { font-size: 1.1rem; } /* Teks dikecilin dikit biar muat */
+            header h3 { font-size: 1rem; width: 75%; }
             
-            .menu-toggle { display: flex; } /* Munculin garis 3 di HP */
+            .menu-toggle { 
+                display: flex !important; 
+            }
             
             nav#nav-menu { 
-                display: none; /* Sembunyiin menu aslinya */
+                display: none; /* Awalnya disembunyikan */
                 position: absolute;
-                top: 100%; left: 0; width: 100%;
-                background: rgba(5, 5, 5, 0.98);
-                border-bottom: 1px solid #222;
-                box-shadow: 0 10px 15px rgba(0,0,0,0.5);
+                top: 100%; 
+                left: 0; 
+                width: 100%;
+                background: #0a0a0a;
+                border-bottom: 2px solid var(--primary-color);
+                box-shadow: 0 15px 25px rgba(0,0,0,0.8);
+                z-index: 9999;
             }
-            nav#nav-menu.active { display: block; } /* Munculin menu dropdown saat tombol diklik */
+            
+            /* Kelas aktif ini yang dipanggil JS supaya menu muncul berderet ke bawah */
+            nav#nav-menu.active { 
+                display: block !important; 
+            }
             
             nav ul { 
-                flex-direction: column; 
-                margin: 0; padding: 10px 0; 
-                gap: 0;
+                display: flex !important;
+                flex-direction: column !important; 
+                margin: 0 !important; 
+                padding: 10px 0 !important; 
+                list-style: none;
             }
-            nav li { margin: 0; text-align: center; }
+            
+            nav li { 
+                margin: 0 !important; 
+                text-align: left; 
+                width: 100%;
+            }
+            
             nav a { 
-                display: block; 
-                padding: 15px 20px; 
-                font-size: 1.05rem; 
+                display: block !important; 
+                padding: 15px 25px !important; 
+                font-size: 1.05rem !important; 
+                border-bottom: 1px solid #1a1a1a;
             }
             /* Kartu sertifikat otomatis melebar penuh di HP */
             .cert-card { 
@@ -749,6 +767,6 @@
             });
         });
     </script>
-    
+
 </body>
 </html>
